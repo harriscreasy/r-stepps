@@ -1,0 +1,695 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+   
+} 
+
+
+
+
+
+
+.container {
+    min-height: 100vh;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    overflow-x: hidden;
+    transform-style: preserve-3d;
+  }
+  
+  .navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10;
+    height: 3rem;
+  }
+  
+  .menu {
+    max-width: 72rem;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #fff;
+  }
+  
+  .logo {
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    line-height: 4rem;
+  }
+  
+  .logo span {
+    font-weight: 300;
+  }
+  
+  .hamburger-menu {
+    height: 4rem;
+    width: 3rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
+  
+  .bar {
+    width: 1.9rem;
+    height: 1.5px;
+    border-radius: 2px;
+    background-color: #eee;
+    transition: 0.5s;
+    position: relative;
+  }
+  
+  .bar:before,
+  .bar:after {
+    content: "";
+    position: absolute;
+    width: inherit;
+    height: inherit;
+    background-color: #eee;
+    transition: 0.5s;
+  }
+  
+  .bar:before {
+    transform: translateY(-9px);
+  }
+  
+  .bar:after {
+    transform: translateY(9px);
+  }
+  
+  .main {
+    position: relative;
+    width: 100%;
+    left: 0;
+    z-index: 5;
+    overflow: hidden;
+    transform-origin: left;
+    transform-style: preserve-3d;
+    transition: 0.5s;
+  }
+  
+  header {
+    min-height: 100vh;
+    width: 100%;
+    background: url("/img/forestbanner.jpg") no-repeat top center / cover;
+    position: relative;
+  }
+  
+  .overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .inner {
+    max-width: 35rem;
+    text-align: center;
+    color: #fff;
+    padding: 0 2rem;
+  }
+  
+  .title {
+    font-size: 2.7rem;
+  }
+  
+  .btn {
+    margin-top: 1rem;
+    padding: 0.6rem 1.8rem;
+    background-color: #1179e7;
+    border: none;
+    border-radius: 25px;
+    color: #fff;
+    text-transform: uppercase;
+    cursor: pointer;
+    text-decoration: none;
+  }
+  
+  .container.active .bar {
+    transform: rotate(360deg);
+    background-color: transparent;
+  }
+  
+  .container.active .bar:before {
+    transform: translateY(0) rotate(45deg);
+  }
+  
+  .container.active .bar:after {
+    transform: translateY(0) rotate(-45deg);
+  }
+  
+  .container.active .main {
+    animation: main-animation 0.5s ease;
+    cursor: pointer;
+    transform: perspective(1300px) rotateY(20deg) translateZ(310px) scale(0.5);
+  }
+  
+  @keyframes main-animation {
+    from {
+      transform: translate(0);
+    }
+  
+    to {
+      transform: perspective(1300px) rotateY(20deg) translateZ(310px) scale(0.5);
+    }
+  }
+  
+  .links {
+    position: absolute;
+    width: 30%;
+    right: 0;
+    top: 0;
+    height: 100vh;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  ul {
+    list-style: none;
+  }
+  
+  .links a {
+    text-decoration: none;
+    color: #eee;
+    padding: 0.7rem 0;
+    display: inline-block;
+    font-size: 1rem;
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: 0.3s;
+    opacity: 0;
+    transform: translateY(10px);
+    animation: hide 0.5s forwards ease;
+  }
+  
+  .links a:hover {
+    color: #fff;
+  }
+  
+  .container.active .links a {
+    animation: appear 0.5s forwards ease var(--i);
+  }
+  
+  @keyframes appear {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0px);
+    }
+  }
+  
+  @keyframes hide {
+    from {
+      opacity: 1;
+      transform: translateY(0px);
+    }
+    to {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+  }
+  
+  .shadow {
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    transform-style: preserve-3d;
+    transform-origin: left;
+    transition: 0.5s;
+    background-color: white;
+  }
+  
+  .shadow.one {
+    z-index: -1;
+    opacity: 0.15;
+  }
+  
+  .shadow.two {
+    z-index: -2;
+    opacity: 0.1;
+  }
+  
+  .container.active .shadow.one {
+    animation: shadow-one 0.6s ease-out;
+    transform: perspective(1300px) rotateY(20deg) translateZ(215px) scale(0.5);
+  }
+  
+  @keyframes shadow-one {
+    0% {
+      transform: translate(0);
+    }
+  
+    5% {
+      transform: perspective(1300px) rotateY(20deg) translateZ(310px) scale(0.5);
+    }
+  
+    100% {
+      transform: perspective(1300px) rotateY(20deg) translateZ(215px) scale(0.5);
+    }
+  }
+  
+  .container.active .shadow.two {
+    animation: shadow-two 0.6s ease-out;
+    transform: perspective(1300px) rotateY(20deg) translateZ(120px) scale(0.5);
+  }
+  
+  @keyframes shadow-two {
+    0% {
+      transform: translate(0);
+    }
+  
+    20% {
+      transform: perspective(1300px) rotateY(20deg) translateZ(310px) scale(0.5);
+    }
+  
+    100% {
+      transform: perspective(1300px) rotateY(20deg) translateZ(120px) scale(0.5);
+    }
+  }
+  
+  .container.active .main:hover + .shadow.one {
+    transform: perspective(1300px) rotateY(20deg) translateZ(230px) scale(0.5);
+  }
+  
+  .container.active .main:hover {
+    transform: perspective(1300px) rotateY(20deg) translateZ(340px) scale(0.5);
+  }
+  
+
+
+.bannerio{ /* TAILLE DE LA BANNIERE */
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: green;
+    
+}
+
+.bannerio img{ /* IMAGE BANNIERE */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.75;
+}
+.bannerio .contentio{
+    position: relative;
+    max-width: 750px;
+    text-align: center;
+}
+
+
+
+.bannerio .contentio h2{ /* TITRE DU SITE */
+    color: #fff;
+    font-size: 60px;
+}
+
+.bannerio .contentio p{ /* DESCRIPTION DU SITE */
+    color: #fff;
+    font-size: 18px;
+}
+
+.bannerio header{ /* POSITION DU LOGO */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 40px 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 10000;
+}
+
+.bannerio header .logo{ /* STYLE DU LOGO */
+    color: #fff;
+    text-decoration: none;
+    font-size: 24px;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+
+.bannerio header .toggle{ /* STYLE DU MENU */
+    position: relative;
+    width: 34px;
+    height: 28px;
+    background: url(/assets/toggle.png);
+    background-size: cover;
+
+}
+
+.about{ /* Position About */
+    position: relative;
+    width: 100%;
+    display: flex;
+    
+}
+
+.about .contentBx{ /* Partie Gauche About */
+    background: #162c3b;
+    padding: 100px;
+    width: 50%;
+}
+
+.heading{ /* Titre Partie Gauche About */
+    color: #fff;
+    font-size: 30px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+}
+
+.headingText{ /* Texte Partie Gauche About */
+    color: #fff;
+    font-size: 16px;
+    font-weight: 300;
+    letter-spacing: 1px;
+}
+
+.about .imgBx{ /* Image Partie Droite About */
+    background: url(/img/aboutBanner.png);
+    width: 50%;
+    background-size: cover;
+    background-position: center;
+}
+
+.buttonRobot{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 50%;
+    margin: auto;
+}
+
+.buttonRobot button{
+    margin: 15px 0;
+}
+
+.services{ /* SETUP DE LA PARTIE PARRAINAGE */
+    background: #12222d;
+    padding: 100px;
+    text-align: center;
+}
+
+.services .containero{ /* SETUP DE LA PARTIE PARRAINAGE */
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 60px;
+} 
+
+.services .containero .serviceBx{ /* SETUP DES CARRÉS DES PARRAINAGES */
+    position: relative;
+    
+    width: 300px;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.services .containero .serviceBx img{
+    width: 300px;
+    height: 300px;
+}
+
+/* .services .containero .serviceBx h2{
+    font-weight: 500;
+    font-size: 20px;
+    letter-spacing: 1px;
+} */
+
+.technology{
+    background: #3a9101;
+    width: 100%;
+    padding: 100px;
+    padding: 300px;
+    margin-top: -300px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.technology .contentBx{
+    max-width: 800px;
+}
+
+.technology .imgBx{
+    
+    max-width: 250px;
+}
+
+.technology .imgBx img{
+    max-width: 100%;
+}
+
+.partenaires{
+    background: #162c3b;
+    padding: 100px;
+    
+}
+
+.partenaires .imgBx{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 40px;
+}
+
+.partenaires .imgBx img{
+    max-width: 200px;
+    margin: 20px;
+    opacity: 0.50;
+    cursor: pointer;
+}
+
+.partenaires .imgBx img:hover{
+    opacity: 1;
+    transition: 0.5s;
+}
+
+.press{
+    position: relative;
+    padding: 100px;
+    background: #12222d;
+    text-align: center;
+}
+
+.press .containero{
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 40px;
+    flex-wrap: wrap;
+}
+
+
+.press .containero .contentBx{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    background: #fff;
+    padding: 60px 50px;
+    width: 550px;
+}
+
+.press .containero .contentBx p{
+    font-style: italic;
+}
+.press .containero .contentBx h3{
+    width: 100%;
+    margin-top: 30px;
+    text-align: end;
+}
+
+.contact{
+    padding: 100px;
+    background: #162c3b;
+    text-align: center;
+    
+}
+
+.imgBx2{
+    background: url(/assets/red.jpg);
+    background-size: cover;
+    background-position: center;
+    width: 50%;
+}
+
+.redbg{
+    background: url(/assets/red.jpg) !important;
+    background-size: cover;
+    background-position: center;
+}
+
+.form .inputBx{
+     margin-bottom: 40px;
+}
+
+.form .inputBx input{
+    width: 100%;
+    background : transparent;
+    border: none;
+    box-shadow: none;
+    outline: none;
+    padding: 10px 0;
+    font-size: 18px;
+    font-weight: 300;
+    color: #fff;
+    border-bottom: 2px solid #fff;
+}
+
+.form .inputBx input::placeholder{
+    color: #fff;
+}
+
+.form .inputBx textarea{
+    width: 100%;
+    background : transparent;
+    box-shadow: none;
+    border: none;
+    outline: none;
+    padding: 10px 0;
+    font-size: 18px;
+    font-weight: 300;
+    color: #fff;
+    min-height: 150px;
+    border-bottom: 2px solid #fff;
+}
+
+.form .inputBx textarea::placeholder{
+    color: #fff;
+}
+
+
+.form .inputBx input[type="submit"]{
+    width: 150px;
+    background: #fff;
+    color: #111;
+    cursor: pointer;
+    font-weight: 400;
+}
+
+
+
+@media (max-width: 991px){
+
+    .bannerio{
+        padding: 50px;
+    }
+
+
+    .bannerio header{
+        padding: 20px 50px;
+    }
+
+    .bannerio header h2{
+        font-size: 36px;
+    }
+
+    .bannerio .contentio p{
+        color: #fff;
+        font-size: 18px;
+    }
+
+    .about{
+        flex-direction: column;
+    }
+
+    .about .contentBx, .about .imgBx{
+        width: 100%;
+        padding: 50px;
+        min-height: 400px;
+        text-align: center; 
+    }
+
+    .services{
+        padding: 50px;
+    }
+
+    .services .containero{
+        justify-content: center;
+        margin-top: 20px;
+    }
+
+    .services .containero .serviceBx{
+        margin: 20px;
+        width: 300px;
+        height: 350px;
+    }
+
+    .technology{
+        padding: 50px;
+        padding-top: 300px;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    .technology .imgBx{
+        margin-top: 40px;
+        max-width: 250px;
+    }
+
+    .partenaires{
+        padding: 50px;
+    }
+
+    .partenaires .imgBx{
+        justify-content: center;
+    }
+
+    .press{
+        padding: 50px;
+    }
+
+    .press .contentBx{
+        padding: 60px 40px;
+        max-width: 550px;
+        margin-bottom: 40px;
+    }
+    .press .contentBx:last-child{
+        margin-bottom: 0px;
+    }
+
+    .contact{
+        padding: 50px;
+    }
+
+
+}
