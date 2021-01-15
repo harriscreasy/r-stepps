@@ -2,303 +2,22 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    position: relative;
     font-family: Arial, Helvetica, sans-serif;
    
 } 
 
+body{
+  overflow-x: hidden;
+}
 
+.navbar{
+  background: #162C3B;
+}
 
-
-
-
-.container {
-    min-height: 100vh;
-    width: 100%;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    overflow-x: hidden;
-    transform-style: preserve-3d;
-  }
-  
-  .navbar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 10;
-    height: 3rem;
-  }
-  
-  .menu {
-    max-width: 72rem;
-    width: 100%;
-    margin: 0 auto;
-    padding: 0 2rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    color: #fff;
-  }
-  
-  .logo {
-    font-size: 1.1rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    line-height: 4rem;
-  }
-  
-  .logo span {
-    font-weight: 300;
-  }
-  
-  .hamburger-menu {
-    height: 4rem;
-    width: 3rem;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-  }
-  
-  .bar {
-    width: 1.9rem;
-    height: 1.5px;
-    border-radius: 2px;
-    background-color: #eee;
-    transition: 0.5s;
-    position: relative;
-  }
-  
-  .bar:before,
-  .bar:after {
-    content: "";
-    position: absolute;
-    width: inherit;
-    height: inherit;
-    background-color: #eee;
-    transition: 0.5s;
-  }
-  
-  .bar:before {
-    transform: translateY(-9px);
-  }
-  
-  .bar:after {
-    transform: translateY(9px);
-  }
-  
-  .main {
-    position: relative;
-    width: 100%;
-    left: 0;
-    z-index: 5;
-    overflow: hidden;
-    transform-origin: left;
-    transform-style: preserve-3d;
-    transition: 0.5s;
-  }
-  
-  header {
-    min-height: 100vh;
-    width: 100%;
-    background: url("/img/forestbanner.jpg") no-repeat top center / cover;
-    position: relative;
-  }
-  
-  .overlay {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .inner {
-    max-width: 35rem;
-    text-align: center;
-    color: #fff;
-    padding: 0 2rem;
-  }
-  
-  .title {
-    font-size: 2.7rem;
-  }
-  
-  .btn {
-    margin-top: 1rem;
-    padding: 0.6rem 1.8rem;
-    background-color: #1179e7;
-    border: none;
-    border-radius: 25px;
-    color: #fff;
-    text-transform: uppercase;
-    cursor: pointer;
-    text-decoration: none;
-  }
-  
-  .container.active .bar {
-    transform: rotate(360deg);
-    background-color: transparent;
-  }
-  
-  .container.active .bar:before {
-    transform: translateY(0) rotate(45deg);
-  }
-  
-  .container.active .bar:after {
-    transform: translateY(0) rotate(-45deg);
-  }
-  
-  .container.active .main {
-    animation: main-animation 0.5s ease;
-    cursor: pointer;
-    transform: perspective(1300px) rotateY(20deg) translateZ(310px) scale(0.5);
-  }
-  
-  @keyframes main-animation {
-    from {
-      transform: translate(0);
-    }
-  
-    to {
-      transform: perspective(1300px) rotateY(20deg) translateZ(310px) scale(0.5);
-    }
-  }
-  
-  .links {
-    position: absolute;
-    width: 30%;
-    right: 0;
-    top: 0;
-    height: 100vh;
-    z-index: 2;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  ul {
-    list-style: none;
-  }
-  
-  .links a {
-    text-decoration: none;
-    color: #eee;
-    padding: 0.7rem 0;
-    display: inline-block;
-    font-size: 1rem;
-    font-weight: 300;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    transition: 0.3s;
-    opacity: 0;
-    transform: translateY(10px);
-    animation: hide 0.5s forwards ease;
-  }
-  
-  .links a:hover {
-    color: #fff;
-  }
-  
-  .container.active .links a {
-    animation: appear 0.5s forwards ease var(--i);
-  }
-  
-  @keyframes appear {
-    from {
-      opacity: 0;
-      transform: translateY(10px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0px);
-    }
-  }
-  
-  @keyframes hide {
-    from {
-      opacity: 1;
-      transform: translateY(0px);
-    }
-    to {
-      opacity: 0;
-      transform: translateY(10px);
-    }
-  }
-  
-  .shadow {
-    position: absolute;
-    width: 100%;
-    height: 100vh;
-    top: 0;
-    left: 0;
-    transform-style: preserve-3d;
-    transform-origin: left;
-    transition: 0.5s;
-    background-color: white;
-  }
-  
-  .shadow.one {
-    z-index: -1;
-    opacity: 0.15;
-  }
-  
-  .shadow.two {
-    z-index: -2;
-    opacity: 0.1;
-  }
-  
-  .container.active .shadow.one {
-    animation: shadow-one 0.6s ease-out;
-    transform: perspective(1300px) rotateY(20deg) translateZ(215px) scale(0.5);
-  }
-  
-  @keyframes shadow-one {
-    0% {
-      transform: translate(0);
-    }
-  
-    5% {
-      transform: perspective(1300px) rotateY(20deg) translateZ(310px) scale(0.5);
-    }
-  
-    100% {
-      transform: perspective(1300px) rotateY(20deg) translateZ(215px) scale(0.5);
-    }
-  }
-  
-  .container.active .shadow.two {
-    animation: shadow-two 0.6s ease-out;
-    transform: perspective(1300px) rotateY(20deg) translateZ(120px) scale(0.5);
-  }
-  
-  @keyframes shadow-two {
-    0% {
-      transform: translate(0);
-    }
-  
-    20% {
-      transform: perspective(1300px) rotateY(20deg) translateZ(310px) scale(0.5);
-    }
-  
-    100% {
-      transform: perspective(1300px) rotateY(20deg) translateZ(120px) scale(0.5);
-    }
-  }
-  
-  .container.active .main:hover + .shadow.one {
-    transform: perspective(1300px) rotateY(20deg) translateZ(230px) scale(0.5);
-  }
-  
-  .container.active .main:hover {
-    transform: perspective(1300px) rotateY(20deg) translateZ(340px) scale(0.5);
-  }
-  
+.navbar-brand a{
+  color: green;
+}
 
 
 .bannerio{ /* TAILLE DE LA BANNIERE */
@@ -374,6 +93,7 @@
     position: relative;
     width: 100%;
     display: flex;
+    background: #162c3b;
     
 }
 
@@ -440,6 +160,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    z-index: 1;
 }
 
 .services .containero .serviceBx img{
@@ -454,7 +175,7 @@
 } */
 
 .technology{
-    background: #3a9101;
+    background: #162c3b;
     width: 100%;
     padding: 100px;
     padding: 300px;
@@ -605,6 +326,146 @@
     cursor: pointer;
     font-weight: 400;
 }
+
+
+
+
+/* ---- CONFIGURE LE FLEX POUR LA CARD---- */
+
+.containera{
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  
+  
+}
+
+/* ---- CONFIGURE LE CONTOUR DE LA CARD---- */
+
+.containera .carda{
+  position: relative;
+  width: 350px;
+  height: 400px;
+  margin: 20px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(10px);
+  
+}
+
+
+/* ---- CONFIGURE L'INTERIEUR DE LA CARD---- */
+
+.containera .carda .contenta{
+  position: relative; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  opacity: 0.5;
+  transition: 0.5s;
+}
+
+
+/* ---- CONFIGURE L'ANIMATION DE LA CARD AVEC LA MONTEE ET L'OPACITE---- */
+
+.containera .carda:hover .contenta{
+  opacity: 1;
+  transform: translateY(-20px);
+
+}
+
+/* ---- CONFIGURE LES IMAGES ET LA BORDURE---- */
+
+.containera .carda .contenta .imgArt{
+  position: relative;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 10px solid rgba(0, 0, 0, 0.25);
+
+}
+
+.containera .carda .contenta .imgArt img{
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ---- CONFIGURE LE NOM DE L'ARTISTE---- */
+
+.containera .carda .contenta .contentaArt h3{
+  color: black;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 500;
+  font-size: 25px;
+  text-align: center;
+  margin: 20px 0 10px;
+  line-height: 1.1em;
+}
+
+/* ---- CONFIGURE LE STYLE DE MUSIQUE---- */
+
+.containera .carda .contenta .contentaArt h3 span{
+
+
+  font-size: 18px;
+  font-weight: 300;
+  text-transform: initial;
+}
+
+/* ---- CONFIGURE LES ICONES DE RESEAUX---- */
+
+.containera .carda .sci {
+  position: absolute;
+  bottom: 20px;
+  display: flex;
+  width: 100%;
+  padding: 0;
+  justify-content: center;
+  color: black;
+ 
+}
+
+/* ---- CONFIGURE LES ANIMATIONS DES ICONES DE RESEAUX---- */
+
+.containera .carda .sci li{
+  list-style: none; 
+  margin: 0 10px;
+  font-size: 20px;
+  transform: translateY(30px);
+  transition: 0.5s;
+  opacity: 0;
+  transition-delay: calc(0.1s * var(--i));
+  
+  
+}
+
+/* ---- CONFIGURE LES ANIMATIONS DES ICONES DE RESEAUX---- */
+
+.containera .carda:hover .sci li{
+  transform: translateY(10px);
+  opacity: 1;
+}
+
+/* ---- CONFIGURE LES ICONES DE RESEAUX---- */
+
+.containera .carda .sci li a {
+  color: black;
+  font-size: 24px;
+}
+
 
 
 
