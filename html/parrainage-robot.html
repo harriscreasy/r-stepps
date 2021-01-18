@@ -17,7 +17,7 @@
     
           <a class="navbar-brand" href="../index.html">Home</a>
           <a class="navbar-brand" href="#">Espace Parrainage</a>
-          <a class="navbar-brand" href="#">Profil</a>
+          <a class="navbar-brand" href="#"><i class="fas fa-user-circle"></i></a>
           
            
           
@@ -46,11 +46,11 @@
     <div class="containera">
         <div class="carda">
             <div class="contenta">
-                <div class="imgArt"><a href="pagePnl.html"><img src="/img/tracker-robot.png" alt="Photo Pnl"></a></div>
+                <div class="imgArt"><a href="#"><img src="/img/tracker-robot.png" alt="Photo Pnl"></a></div>
                 <div class="contentaArt">
                     <h3>Tracker<br><span>Surveiller</span></h3>
                     <div class="button-robot-parrain">
-                    <button onclick="toggleimage()";><i class="fas fa-info"></i></button>
+                    <button onclick=toggleimagetracker();><i class="fas fa-info"></i></button>
                     <button onclick="toggle()";><i class="far fa-play-circle"></i></button>
                     <button><i class="fas fa-shopping-basket"></i></button>
                     </div>
@@ -66,11 +66,11 @@
       
         <div class="carda">
             <div class="contenta">
-                <div class="imgArt"><a href="pageDrake.html"><img src="/img/digger-robot.png" alt="Photo Pnl"></a></div>
+                <div class="imgArt"><a href="#"><img src="/img/digger-robot.png" alt="Photo Pnl"></a></div>
                 <div class="contentaArt">
                     <h3>Digger<br><span>Planter</span></h3>
                     <div class="button-robot-parrain">
-                    <button><i class="fas fa-info-circle"></i></button>
+                    <button onclick=toggleimagedigger();><i class="fas fa-info"></i></button>
                     <button onclick="toggle()";><i class="far fa-play-circle"></i></button>
                     <button><i class="fas fa-shopping-basket"></i></button>
                     </div>
@@ -88,11 +88,11 @@
       
         <div class="carda">
             <div class="contenta">
-                <div class="imgArt"><a href="pageDrake.html"><img src="/img/carrier-png.png" alt="Photo Pnl"></a></div>
+                <div class="imgArt"><a href="#"><img src="/img/carrier-png.png" alt="Photo Pnl"></a></div>
                 <div class="contentaArt">
                     <h3>Carrier<br><span>Stocker</span></h3>
                     <div class="button-robot-parrain">
-                    <button><i class="fas fa-info-circle"></i></button>
+                    <button onclick="toggleimagecarrier()";><i class="fas fa-info"></i></button>
                     <button onclick="toggle()";><i class="far fa-play-circle"></i></button>
                     <button><i class="fas fa-shopping-basket"></i></button>
                     </div>
@@ -113,7 +113,7 @@
         </div>
 
         <div class="trailer-image">
-            <img src="/img/robotmars.jpg" controls="true"></video>
+            <img src="#" controls="true"></video>
             <img src="/img/close-button.png" class="close" onclick="toggleimage()"; alt="">
         </div>
 
@@ -121,11 +121,11 @@
 
         <div class="carda">
           <div class="contenta">
-              <div class="imgArt"><a href="pageMreazi.html"><img src="/img/hydro-robot.png" alt="Photo Pnl"></a></div>
+              <div class="imgArt"><a href="#"><img src="/img/hydro-robot.png" alt="Photo Pnl"></a></div>
               <div class="contentaArt">
                 <h3>Hydro<br><span>Arroser</span></h3>
                 <div class="button-robot-parrain">
-                <button><i class="fas fa-info-circle"></i></button>
+                <button onclick=toggleimagehydro();><i class="fas fa-info"></i></button>
                 <button onclick="toggle()";><i class="far fa-play-circle"></i></button>
                 <button><i class="fas fa-shopping-basket"></i></button>
                 </div>
@@ -143,11 +143,11 @@
    
       <div class="carda">
         <div class="contenta">
-            <div class="imgArt"><a href="pageMreazi.html"><img src="/img/watch-robot.png" alt="Photo Pnl"></a></div>
+            <div class="imgArt"><a href="#"><img src="/img/watch-robot.png" alt="Photo Pnl"></a></div>
             <div class="contentaArt">
                 <h3>Watch<br><span>Observer</span></h3>
                 <div class="button-robot-parrain">
-                <button><i class="fas fa-info-circle"></i></button>
+                <button><i class="fas fa-info"></i></button>
                 <button onclick="toggle()";><i class="far fa-play-circle"></i></button>
                 <button><i class="fas fa-shopping-basket"></i></button>
                 </div>
@@ -165,11 +165,11 @@
       
       <div class="carda">
         <div class="contenta">
-            <div class="imgArt"><a href="pageMreazi.html"><img src="/img/weather-robot.png" alt="Photo Pnl"></a></div>
+            <div class="imgArt"><a href="#"><img src="/img/weather-robot.png" alt="Photo Pnl"></a></div>
             <div class="contentaArt">
                 <h3>Weather<br><span>Prévoir</span></h3>
                 <div class="button-robot-parrain">
-                <button><i class="fas fa-info-circle"></i></button>
+                <button><i class="fas fa-info"></i></button>
                 <button onclick="toggle()";><i class="far fa-play-circle"></i></button>
                 <button><i class="fas fa-shopping-basket"></i></button>
                 </div>
@@ -191,7 +191,7 @@
             <div class="contentaArt">
                 <h3>Solar<br><span>Recharger</span></h3>
                 <div class="button-robot-parrain">
-                <button><i class="fas fa-info-circle"></i></button>
+                <button><i class="fas fa-info"></i></button>
                 <button onclick="toggle()";><i class="far fa-play-circle"></i></button>
                 <button><i class="fas fa-shopping-basket"></i></button>
                 </div>
@@ -208,31 +208,29 @@
       </section>
       
       <!-- -------------------- FIN DE LA SECTION ------------------- -->
+
+
+
+      <!-- --- ABOUT ---  -->
+
+<section class="about">
+
+    <div class="contentBx">
+
+    <h2 class="heading" data-center-center="opacity:1;right:0;" data-0-bottom="opacity:0;right:500px;">PARRAINER UN ARBRE</h2>
+    <p class="headingText">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam harum corrupti incidunt vel accusantium quod facilis rem omnis voluptas dolores. Maxime molestias dolorum atque tenetur doloribus. Ducimus officia provident necessitatibus illum? Incidunt amet voluptatibus voluptas consequuntur, ducimus expedita rem autem nam tempora aut labore dolore earum soluta id a porro minima aliquid quo sed? Ut sapiente, inventore ipsam quaerat unde hic veritatis velit voluptas eligendi.<br><br>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Facere error ut iste, recusandae placeat, fugit velit, exercitationem assumenda animi quas ex maxime amet. Voluptas, magnam placeat. </p>
+
+    </div> <!--  -- FIN DIV CONTENTBX -- -->
+
+    <div class="imgBx" data-center-center="opacity:1;left:0;" data-0-bottom="opacity:0;left:200px;"></div>
+
+
+    </div> <!--  -- FIN DIV imgBx -- -->
+
+</section> <!--  -- FIN SECTION ABOUT -- -->
       
 
-      <script type="text/javascript">
- 
-        function toggle(){
-          let close = document.querySelector(".close");
-          let trailer = document.querySelector(".trailer-video");
-          trailer.classList.toggle("active");
-          
-        }
-
-        
-
-        function toggleimage(){
-          let close = document.querySelector(".close");
-          let trailer = document.querySelector(".trailer-image");
-          let trailerimage = document.querySelector(".trailer-image img");
-          trailer.classList.toggle("active");
-          trailerimage.src = "/img/info-robot-image/presentation-digger.png" ;
-          
-        }
-
-       
-
-    </script>
+     <script src="/script/parrainage-robot.js"></script>
      
 
 </body>
