@@ -12,6 +12,11 @@ body{
     background: #081c15;
   }
 
+  .fa-user-circle{
+    font-size: 30px;
+}
+
+
 .about{ /* Position About */
     position: relative;
     width: 100%;
