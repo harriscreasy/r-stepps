@@ -61,7 +61,7 @@ body{
 }
 
 .section1{
-    border: 2px solid white;
+    border-bottom: 10px solid white;
     margin: auto;
     margin: 50px auto;
 }

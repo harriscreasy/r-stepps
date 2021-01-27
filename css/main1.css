@@ -255,7 +255,7 @@ body{
 
 .contact{
     padding: 100px;
-    background: #ecf39e;
+    background: #b2967d;
     text-align: center;
     
     
@@ -582,7 +582,8 @@ body{
     }
 
     .services .containero .serviceBx{
-        margin: 20px;
+        margin: 40px;
+       
         width: 300px;
         height: 350px;
     }
@@ -609,12 +610,14 @@ body{
 
     .press{
         padding: 50px;
+        margin: auto;
     }
 
     .press .contentBx{
         padding: 60px 40px;
         max-width: 550px;
         margin-bottom: 40px;
+        font-size: 14px;
     }
     .press .contentBx:last-child{
         margin-bottom: 0px;
