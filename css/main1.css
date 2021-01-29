@@ -79,8 +79,8 @@ body{
     position: relative;
     width: 100%;
     display: flex;
-    background: #344E41;
-    height: 55vh;
+    background: #2A9134;
+    
     
 }
 
@@ -256,7 +256,7 @@ body{
 
 .contact{
     padding: 100px;
-    background: #b2967d;
+    background: #41C84F;
     text-align: center;
     
     
